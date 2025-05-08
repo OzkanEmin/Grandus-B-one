@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxanium:wght@200..800&family=Signika+Negative:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxanium:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Signika+Negative:wght@300..700&family=Sora:wght@100..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    margin: 0;
+}
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin:0 auto; 
+    background-color: #fff;
+    width: 100%;
+    padding: 20px 0 20px 0;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.markaIsmi{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+    color: #000000;
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
+    
+    
+}
+.markaIsmi h1{
+    background: linear-gradient(
+        to left, 
+        #000000   0%,        /* Ortada hafif beyaz */
+        #d40000 100%         /* Yanlara doğru şeffaf */
+    );
+    -webkit-background-clip: text; /* Gradyanı sadece metin içinde uygula */
+    -webkit-text-fill-color: transparent;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+
+    
+}
+
+.contact p,h4{
+    margin: 2px;
+    font-family: "Siginka Negative", sans-serif;
+}
+.contact p{
+    font-style: italic;
+    font-weight: lighter;
+}
+.contact h4{
+    font-style: italic;
+    font-weight: 700;
+}
+.navbarMenu{
+    background: linear-gradient(
+        to right, 
+        #000000   0%,        /* Ortada hafif beyaz */
+        #d40000 100%         /* Yanlara doğru şeffaf */
+    );
+    -webkit-background-clip: text; /* Gradyanı sadece metin içinde uygula */
+    -webkit-text-fill-color: transparent;
+}
+.navbarMenu .myLink{
+    text-decoration: none;
+    color: #d40000;
+    font-family: "Siginka Negative", sans-serif;
+    font-weight: 650;
+    font-size: 1.2em;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+
+.myLink.activeLink{
+    text-decoration: underline;
+}
+
+
+
+
+.navbarMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px 40px 20px 20px;
+    width: 40%;
+    
+}
+ 
+.headerContainer.visibleH{
+    transform: translateY(0%); /* Yukarı kaybolur */
+    opacity: 1;
+}
+.headerContainer.hiddenH{ 
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%); /* Yukarı kaybolur */
+    transition: 0.3s ease-out;
+}
+
+
+.markaIsmiMobil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #000000;
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
+    
+    background: linear-gradient(
+        to left, 
+        #000000   0%,        /* Ortada hafif beyaz */
+        #d40000 100%         /* Yanlara doğru şeffaf */
+    );
+    -webkit-background-clip: text; /* Gradyanı sadece metin içinde uygula */
+    -webkit-text-fill-color: transparent;
+}
+.mobil_ikon{
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+.mobiliz{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+}
+
+.hamburger {
+    display: flex;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-links-mobile {
+    position: sticky;
+    
+    width: 100%;
+    
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .myLink_Mobile{
+    text-decoration: none;
+    color: #d40000;
+    font-family: "Siginka Negative", sans-serif;
+    font-weight: 650;
+    font-size: 0.8em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .nav-links-mobile a:hover {
+    color: #00bcd4;
+  }
+  @media (max-width: 1440px) {
+    .headerContainer{
+        padding: 0;
+        font-size: 0.7em;
+        
+    }  
+    .navbarMenu {
+        font-size: 1.2em;
+    } 
+  }
+  /* Mobil Görünüm için */
+  @media (max-width: 768px) {
+    .headerContainer {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.7em;
+        padding: 0;
+        margin: 0 auto;
+        position: fixed;
+        top: 0;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .headerContainer.hiddenH {
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .markaIsmi{
+        width: 100%;
+    } 
+    .navbarMenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 10px 0;
+        width: 100%;
+        font-size: 1.3em;
+        
+    } 
+    
+  }
+
+@media (max-width: 480px) {
+    body{
+        width: 100%;
+    }
+    .headerContainer{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.7em;
+        padding: 0;
+        margin: 0 auto;
+    }  
+    .markaIsmi{
+        width: 100%;
+    } 
+    .navbarMenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 10px 0;
+        width: 100%;
+        font-size: 1.3em;
+        
+    } 
+   
+}
+
+.navbar {
+  transition: transform 0.3s ease;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.mobile-open {
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu-button {
+    display: block;
+    /* ... diğer stil özellikleri ... */
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar.mobile-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    /* ... diğer mobil menü stilleri ... */
+  }
+}
